@@ -14,7 +14,8 @@
                     <h1>BOOLFLIX</h1>
                 </div>
                 <div class="imput">
-                    <input type="text">
+                    <input type="text" v-model="value">
+                    <button type="button" class="btn_primary" v-on:click="searchFilm">search</button>
                 </div>
             </header>
             <main>
