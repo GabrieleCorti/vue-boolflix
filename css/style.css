@@ -9,7 +9,9 @@ body {
 }
 
 img {
-    width: 100%;
+    width: 240px;
+    height: 410px;
+    object-fit: cover;
     display: block;
 }
 
@@ -57,15 +59,14 @@ main {
 }
 /*main*/
 .card {
-    width: 250px;
+    width: 240px;
+    height: 410px;
     position: relative;
-    margin: 0px 20px;
+    margin: 0px 20px 15px;
     border: 1px solid white;
+    overflow: hidden;
 }
 
-.card:first-child{
-    margin: 0 20px 0 0;
-}
 
 .all_info {
     position: absolute;

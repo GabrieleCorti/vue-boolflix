@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+            crossorigin="anonymous" />
         <link rel="stylesheet" href="css/style.css">
         <title>Document</title>
     </head>
@@ -19,39 +22,18 @@
                 </div>
             </header>
             <main>
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
+                <div class="card" v-for="(item, index) in currentFilm">
+                    <img :src="'https://image.tmdb.org/t/p/w500'+item.poster_path" :alt="item.title">
                     <div class="all_info">
                         <ul>
-                            <li><span class="type_info">Titolo:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Titolo originale:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Voto:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Overvue:</span><span class="info">lmao</span></li>
+                            <li><span class="type_info">Titolo:</span><span class="info">{{item.title}}</span></li>
+                            <li><span class="type_info">Titolo originale:</span><span class="info">{{item.original_title}}</span></li>
+                            <li><span class="type_info">Voto:</span><span class="info" v-for="n in (Math.floor((item.vote_average) / 2)) "><i class="fas fa-star"></i></span><span class="info" v-for="n in (5 - (Math.floor((item.vote_average) / 2)))"><i class="far fa-star"></i></span></li>
+                            <li><span class="type_info">Overvue:</span><span class="info">{{item.overview}}</span></li>
                         </ul>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-                    <div class="all_info">
-                        <ul>
-                            <li><span class="type_info">Titolo:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Titolo originale:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Voto:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Overvue:</span><span class="info">lmao</span></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="card">
-                    <img src="https://image.tmdb.org/t/p/w400/1J1e8Uslw8MAE7mIVFh6TU9mPt8.jpg" alt="">
-                    <div class="all_info">
-                        <ul>
-                            <li><span class="type_info">Titolo:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Titolo originale:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Voto:</span><span class="info">lmao</span></li>
-                            <li><span class="type_info">Overvue:</span><span class="info">lmao</span></li>
-                        </ul>
-                    </div>
-                </div>
+    
             </main>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>

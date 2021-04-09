@@ -6,16 +6,18 @@ const App = new Vue({
     },
     methods: {
         searchFilm: function(){
-            const Self = this;
+
             axios.get('https://api.themoviedb.org/3/search/movie',{
                 params: {
                     api_key: "fe5a411220156931adf0623172772b2b",
                     language: "it-IT",
-                    query: Self.value,
+                    query: this.value,
                 }
             })
-            .then(function(response){
-                console.log(response.data);
+            .then((response) => {
+                console.log(response.data.results);
+                this.currentFilm = response.data.results;
+                console.log(this.currentFilm);
             })
         }
     },
