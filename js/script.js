@@ -3,6 +3,8 @@ const App = new Vue({
     data: {
         currentFilm: [],
         value: "",
+        apiKey: "fe5a411220156931adf0623172772b2b",
+        lenguage: "it-IT",
         areFilm: false,
         areTv: false,
     },
@@ -24,8 +26,8 @@ const App = new Vue({
 
             axios.get('https://api.themoviedb.org/3/search/tv', {
                 params: {
-                    api_key: "fe5a411220156931adf0623172772b2b",
-                    language: "it-IT",
+                    api_key: this.apiKey,
+                    language: this.lenguage,
                     query: this.value,
                 }
             })
