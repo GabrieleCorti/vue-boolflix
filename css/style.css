@@ -1,3 +1,59 @@
+/* font */
+
+    @font-face {
+    font-family: 'Netflix Sans Regular';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Regular'), url('../font/NetflixSansRegular.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Netflix Sans Icon';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Icon'), url('../font/NetflixSansIcon.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Netflix Sans Thin';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Thin'), url('../font/NetflixSansThin.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Netflix Sans Light';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Light'), url('../font/NetflixSansLight.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Netflix Sans Medium';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Medium'), url('../font/NetflixSansMedium.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Netflix Sans Bold';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Bold'), url('../font/NetflixSansBold.woff') format('woff');
+    }
+    
+
+    @font-face {
+    font-family: 'Netflix Sans Black';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Netflix Sans Black'), url('../font/NetflixSansBlack.woff') format('woff');
+    }
 /*all*/
 * {
     box-sizing: border-box;
@@ -6,6 +62,7 @@
 }
 body {
     background-color: #434343;
+    font-family: 'Netflix Sans light'
 }
 
 img {
@@ -18,9 +75,20 @@ img {
 ul {
     list-style: none;
 }
+
+li {
+    padding: 5px 0;
+}
 /*typo*/
 h1 {
     color: #E50914;
+}
+
+h2 {
+    padding: 20px;
+    color: white;
+    font-size: 35px;
+    /* opacity: 0.7; */
 }
 
 input {
@@ -39,10 +107,11 @@ input:focus {
     color: white;
 }
 
-.type_info{
-    font-weight: bold;
+.type_info {
+    font-family: 'Netflix Sans bold';
     padding-right: 2px;
 }
+
 /*section*/
 header {
     background-color: black;
@@ -54,8 +123,19 @@ header {
 
 main {
     padding: 40px 100px;
+    /* display: flex;
+    flex-wrap: wrap; */
+}
+
+section > div {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
+}
+/*header*/
+.logo img {
+    width: 102px;
+    height: 35px;
 }
 /*main*/
 .card {
@@ -84,4 +164,27 @@ main {
     opacity: 1;
     background-color: rgba(0, 0, 0, 0.8);
     transition: all 0.3s ease-out;
+}
+
+.language .type_info {
+    padding-right: 6px;
+}
+
+.language {
+    display: flex;
+    align-items: center;
+}
+
+
+.flag {
+    width: 20px;
+    height: 16px;
+}
+/* vue transition */
+.card_loading-enter-active, .card_loading-leave-active {
+    transition: all 0.6s linear;
+}
+
+.card_loading-enter, .card_loading-leave-to {
+    opacity: 0;
 }
