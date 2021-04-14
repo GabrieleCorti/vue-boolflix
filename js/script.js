@@ -22,20 +22,21 @@ const App = new Vue({
                 /* console.log(response.data.results); */
                 this.currentFilm = response.data.results;
                 /* console.log(this.currentFilm); */
+                axios.get('https://api.themoviedb.org/3/search/tv', {
+                    params: {
+                        api_key: this.apiKey,
+                        language: this.lenguage,
+                        query: this.value,
+                    }
+                })
+                    .then((response) => {
+                        /* console.log(response.data.results); */
+                        this.currentFilm = [...this.currentFilm, ...response.data.results];
+                        /* console.log(this.currentFilm); */
+                    });
             })
 
-            axios.get('https://api.themoviedb.org/3/search/tv', {
-                params: {
-                    api_key: this.apiKey,
-                    language: this.lenguage,
-                    query: this.value,
-                }
-            })
-                .then((response) => {
-                    /* console.log(response.data.results); */
-                    this.currentFilm = [...this.currentFilm, ...response.data.results];
-                    /* console.log(this.currentFilm); */
-                })
+            
         }
     },
 })
